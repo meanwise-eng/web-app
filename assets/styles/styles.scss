@@ -1,0 +1,12 @@
+@import "partials/settings/global";
+
+@import "partials/tools/mixins";
+
+@import "partials/generic/bootstrap";
+
+@import "partials/base/base",
+        "partials/base/helper";
+
+@import "partials/common/buttons.scss";
+
+@import "../../src/components/HomePage/home.scss";

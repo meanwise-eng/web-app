@@ -1,0 +1,30 @@
+{
+  "name": "dashboard-app",
+  "version": "1.0.0",
+  "description": "DashBoard application for Meanwise Analytics API",
+  "main": "index.js",
+  "repository": "git@github.com:meanwise-eng/dashboard-app.git",
+  "author": "PunitGr <groove679@gmail.com>",
+  "private": true,
+  "scripts": {
+    "start-dev": "webpack-dev-server --content-base . --history-api-fallback --hot --inline --progress --colors --host 0.0.0.0 --port 4000",
+    "compile-sass": "sass --watch assets/styles:assets/css src/components:assets/css --style compressed",
+    "start": "NODE_ENV=development concurrently \"npm run start-dev\" \"npm run compile-sass\"",
+    "start-server": "NODE_ENV=production node server.js",
+    "build": "webpack -p",
+    "lint": "tslint 'src/**/*.ts{,x}'"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "source-map-loader": "^0.2.1",
+    "ts-loader": "^2.3.7",
+    "tslint": "^5.7.0",
+    "typescript": "^2.6.0-dev.20170927",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  },
+  "dependencies": {
+    "preact": "^8.2.5",
+    "preact-router": "^2.5.7"
+  }
+}
