@@ -1,9 +1,7 @@
+// @flow
 import { h, Component } from "preact";
 
-interface Props {};
-interface State {};
-
-export default class HomePage extends Component<Props, State> {
+export default class HomePage extends Component {
     render() {
         return (
             <div>Meanwise Inc.</div>

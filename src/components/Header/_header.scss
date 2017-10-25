@@ -1,0 +1,13 @@
+.header {
+    @include element("avatar") {
+        display: flex;
+        flex-direction: row;
+
+        > div {
+            background-size: cover;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
