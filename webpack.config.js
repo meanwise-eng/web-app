@@ -1,53 +1,45 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 
-const env = process.env.NODE_ENV === 'production' ? 'production' : 'development';
+let env = process.env.NODE_ENV === "production" ? "production" : "development";
 
-const BASE_URL = {
-    development: 'http://localhost:8000'
-}
+let BASE_URL = {
+  development: "http://localhost:4000"
+};
 
 module.exports = {
-    entry: {
-        index: './src/index.tsx'
-    },
-    output: {
-        path: path.join(__dirname, './dist'),
-        publicPath: '/dist/',
-        filename: '[name].bundle.js'
-    },
-    resolve: {
-        extensions: [".ts", ".tsx", ".js"]
-    },
-
-    module: {
-        rules: [{
-            enforce: 'pre',
-            test: /\.tsx?$/,
-            use: "source-map-loader",
-            exclude: /node_modules/
-        },{
-            test: /\.tsx?$/,
-            loader: ["ts-loader"],
-            exclude: /node_modules/
-        }],
-    },
-    devtool: 'inline-source-map',
+  entry: {
+    index: "./src/index.js"
+  },
+  output: {
+    path: path.join(__dirname, "./dist"),
+    publicPath: "/dist/",
+    filename: "[name].bundle.js"
+  },
+  module: {
+    rules: [
+      {
+        test: /.jsx?$/,
+        loader: "babel-loader",
+        exclude: /node_modules/
+      }
+    ]
+  }
 }
 
-if (env === 'production') {
-    config.plugins.push(
+if (env === "production") {
+  config.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
-            compressor: {
-                pure_getters: true,
-                unsafe: true,
-                unsafe_comps: true,
-                warnings: false,
-            },
-            output: {
-                comments: false,
-            },
-            sourceMap: false,
+          compressor: {
+            pure_getters: true,
+            unsafe: true,
+            unsafe_comps: true,
+            warnings: false
+          },
+          output: {
+            comments: false
+          },
+          sourceMap: false
         })
-    );
+    )
 }
