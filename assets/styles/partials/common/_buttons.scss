@@ -1,14 +1,13 @@
 %btn {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-width: 80px;
-    padding: 4px 18px;
     height: 30px;
-    font-weight: 400;
     font-size: 14px;
     letter-spacing: 0.01em;
     text-decoration: none;
     text-align: center;
-    margin: 5px 0;
     cursor: pointer;
     outline: none;
     color: #fff;
@@ -20,25 +19,15 @@
     color: #fff;
     background-color: transparent;
     border: 1px solid #fff;
-    border-radius: 999em;
+    border-radius: 3px;
 
-    &:hover, &:focus {
-        color: #fafafa;
-        border-color: #fafafa;
-    }
-
-     @include modifier("rect") {
-        width: calc(100% - 60px);
-        color: #fff;
-        border-radius: 3px;
-        margin: 20px 30px 0;
-        height: auto;
-        padding: 10px;
-        background-color: #495aff;
-        font-size: 20px;
-
-        &:hover, &:focus {
-            background-color: #5562e4;
-        }
+     @include modifier("round") {
+        text-transform: uppercase;
+        width: 90px;
+        height: 30px;
+        background-color: rgba(0, 0, 0, .45);
+        border: rgba(0, 0, 0, .45);
+        border-radius: 100px;
+        font-size: 11px;
     }
 }

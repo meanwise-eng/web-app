@@ -5,11 +5,16 @@ import { connect } from "preact-redux";
 
 import {
     getUserData,
+    getUserId
 } from "../../actions";
 
+import NavBar from "../NavBar";
+
 type Props = {
+    id: ?number,
     user: ?Object,
-    getUserData: Function
+    getUserData: Function,
+    getUserId: Function,
 };
 
 class Header extends Component<Props> {
@@ -27,6 +32,7 @@ class Header extends Component<Props> {
             },
         }).then( response => {
             this.props.getUserData(response.data.results);
+            this.props.getUserId(response.data.results.id);
         }).catch( err => {
             console.log(err);
         });
@@ -34,6 +40,7 @@ class Header extends Component<Props> {
 
     componentWillUnMount() {
         this.props.getUserData(null);
+        this.props.getUserId(null);
     }
 
     render() {
@@ -46,8 +53,9 @@ class Header extends Component<Props> {
                         <div style={{backgroundImage: `url(${user.profile_photo})` }}></div>
                         <button className="solid-btn solid-btn--round">Hire Me</button>
                     </div>
-                    <div className="header__username">{user.first_name} {user.last_name}</div>
-                    <div className="header__description">{user.bio}</div>
+                    <span>{user.first_name} {user.last_name}</span>
+                    <span className="profession">{user.profession_text}</span>
+                    <NavBar />
                 </div>
             );
         }
@@ -59,12 +67,14 @@ class Header extends Component<Props> {
 const mapStateToProps = (state) => {
     return {
         user: state.user,
+        id: state.id
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         getUserData: (userObj) => dispatch(getUserData(userObj)),
+        getUserId: (id) => dispatch(getUserId(id))
     };
 };
 
