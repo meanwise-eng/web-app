@@ -1,12 +1,11 @@
 // @flow
 import { h, Component } from "preact";
-import { connect } from "preact-redux";
 
 type Props = {
     id: ?number
 };
 
-class NavBar extends Component {
+export default class NavBar extends Component {
     constructor(props: Props) {
         super(props);
     }
@@ -24,17 +23,3 @@ class NavBar extends Component {
         );
     }
 }
-
-const mapStateToProps = (state) => {
-    return {
-        id: state.id
-    }
-}
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         getPosts: (posts) => dispatch(getPosts(posts))
-//     }
-// }
-
-export default connect(mapStateToProps, null)(NavBar);

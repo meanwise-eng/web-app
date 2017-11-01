@@ -4,13 +4,24 @@ nav {
 
     ul {
         display: flex;
+        height: 70px;
         flex-direction: row;
         align-items: center;
 
         li {
             color: #fff;
+            display: flex;
+            align-items: center;
+            padding-top: 15px;
+            height: 69px;
             font-size: 16px;
             margin-right: 40px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+
+            &:hover {
+                border-color: #fafafa;
+            }
         }
     }
 }

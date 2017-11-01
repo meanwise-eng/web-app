@@ -1,26 +1,23 @@
 // @flow
 import { h, Component } from "preact";
 import axios from "axios";
-import { connect } from "preact-redux";
-
-import {
-    getUserData,
-    getUserId
-} from "../../actions";
 
 import NavBar from "../NavBar";
 
-type Props = {
-    id: ?number,
-    user: ?Object,
-    getUserData: Function,
-    getUserId: Function,
+type State = {
+    user: ?Object
 };
 
-class Header extends Component<Props> {
+type Props = {};
+
+export default class Header extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
+        this.state = {
+            user: null
+        }
     }
+    state: State;
 
     componentWillMount() {
         axios({
@@ -31,20 +28,22 @@ class Header extends Component<Props> {
                 "Authorization": "Token ca7155e3030544e29737bc5948db7a7137e548de",
             },
         }).then( response => {
-            this.props.getUserData(response.data.results);
-            this.props.getUserId(response.data.results.id);
+            this.setState({
+                user: response.data.results
+            });
         }).catch( err => {
             console.log(err);
         });
     }
 
     componentWillUnMount() {
-        this.props.getUserData(null);
-        this.props.getUserId(null);
+        this.setState({
+            user: null
+        });
     }
 
     render() {
-        const { user } = this.props;
+        const { user } = this.state;
         console.log(user);
         if (user) {
             return (
@@ -55,27 +54,10 @@ class Header extends Component<Props> {
                     </div>
                     <span>{user.first_name} {user.last_name}</span>
                     <span className="profession">{user.profession_text}</span>
-                    <NavBar />
+                    <NavBar id={user.user_id}/>
                 </div>
             );
         }
         return null;
     }
 }
-
-
-const mapStateToProps = (state) => {
-    return {
-        user: state.user,
-        id: state.id
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getUserData: (userObj) => dispatch(getUserData(userObj)),
-        getUserId: (id) => dispatch(getUserId(id))
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
