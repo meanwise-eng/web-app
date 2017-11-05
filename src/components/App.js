@@ -1,11 +1,11 @@
 // @flow
 import { h, Component } from "preact";
-import Header from "./Header";
+import UserPortfolio from "./UserPortfolio";
 
 export default class App extends Component {
     render() {
         return (
-            <Header />
+            <UserPortfolio />
         );
     }
 }
