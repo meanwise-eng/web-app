@@ -2,6 +2,7 @@ import { h, Component } from "preact";
 import axios from "axios";
 
 import Header from "../Header";
+import UserPosts from "../UserPosts";
 
 type State = {
     user: ?Object
@@ -41,10 +42,15 @@ export default class UserPortfolio extends Component<State, Props> {
 
 
     render() {
-        return(
-            <div>
-                <Header data={this.state.user}/>
-            </div>
-        );
+        const { user } = this.state;
+        if (user) {
+            return(
+                <div>
+                    <Header data={this.state.user}/>
+                    <UserPosts id={this.state.user.user_id}/>
+                </div>
+            );
+        }
+        return null;
     }
 }
