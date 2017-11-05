@@ -15,7 +15,11 @@ export default class Post extends Component<Props> {
         if (type == "image") {
             return (
                 <div className="post">
-                    <div className="post__thumb" style={{backgroundImage: `url(${post.image_url})`}}></div>
+                    <div className="post__thumb" style={{backgroundImage: `url(${post.image_url})`}}>
+                        <div className="overlay">
+                            <div className="text">{post.text}</div>
+                        </div>
+                    </div>
                 </div>
             );
         }
