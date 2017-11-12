@@ -2,20 +2,23 @@ import { h, Component } from "preact";
 import axios from "axios";
 
 import Post from "../Post";
+import NavBar from "../NavBar";
 
 type Props = {
     id: ?number
 };
 
 type State = {
-    posts: ?Object
+    posts: ?Object,
+    interests: Array<mixed>
 };
 
 export default class UserPosts extends Component<Props, State> {
     constructor(props) {
         super(props: Props);
         this.state = {
-            posts: null
+            posts: null,
+            interests: []
         };
     }
     state: State;
@@ -30,8 +33,10 @@ export default class UserPosts extends Component<Props, State> {
                     "Authorization": "Token ca7155e3030544e29737bc5948db7a7137e548de",
                 },
             }).then( response => {
+                const posts = response.data.results.data;
                 this.setState({
-                    posts: response.data.results.data
+                    posts: posts,
+                    interests: [...new Set(Object.keys(posts).map(i => posts[i].interest_id))]
                 });
             }).catch( err => {
                 console.log(err);
@@ -49,10 +54,12 @@ export default class UserPosts extends Component<Props, State> {
     }
 
     render() {
-        console.log(this.state.posts);
         return (
-            <div className="posts-wrapper">
-                {this.renderPosts()}
+            <div>
+                <NavBar interestList={this.state.interests} />
+                <div className="posts-wrapper">
+                    {this.renderPosts()}
+                </div>
             </div>
         );
     }

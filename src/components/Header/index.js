@@ -23,7 +23,6 @@ export default class Header extends Component<Props> {
                 </div>
                 <span>{data.first_name} {data.last_name}</span>
                 <span className="profession">{data.profession_text}</span>
-                <NavBar id={data.user_id}/>
             </div>
         );
     }
