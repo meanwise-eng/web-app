@@ -8,25 +8,6 @@ type Props = {
 export default class Post extends Component<Props> {
     constructor(props: Props) {
         super(props);
-        this.setState = {
-            interest: null
-        }
-    }
-
-    componentDidMount() {
-        axios({
-            method: "get",
-            url: "https://api.meanwise.com/api/v1.2/interest/",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        }).then( response => {
-            // this.setState({
-            //     interest:
-            // })
-        }).catch( err => {
-            console.log(err);
-        });
     }
 
     render() {
@@ -40,9 +21,7 @@ export default class Post extends Component<Props> {
         } else {
             return null;
         }
-        console.log(post);
 
-        // const postInterests = post && post.
         return (
             <div className="post">
                 <div className="post__thumb" style={{backgroundImage: `url(${url})`}}>
