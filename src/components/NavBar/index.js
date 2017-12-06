@@ -39,8 +39,13 @@ export default class NavBar extends Component {
         const { interestList } = this.props;
         const { interest } = this.state;
 
-        if (interest && interestList) {
-            const list = interestList.map(id => interest[id]);
+        if (interest && interestList.length > 0) {
+            const interestKeys = Object.keys(interest);
+            let list = {};
+            interestList.forEach((id, index) => {
+                const key = interestKeys.find(item => interest[item].id === id);
+                list[index] = interest[key];
+            });
             return Object.keys(list).map(id => <li>{list[id].name}</li>);
         }
     }

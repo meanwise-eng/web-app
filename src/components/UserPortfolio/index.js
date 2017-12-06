@@ -23,7 +23,6 @@ export default class UserPortfolio extends Component<State, Props> {
             url: "https://api.meanwise.com/api/v1.2/user/118/userprofile/",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Token ca7155e3030544e29737bc5948db7a7137e548de",
             },
         }).then( response => {
             this.setState({

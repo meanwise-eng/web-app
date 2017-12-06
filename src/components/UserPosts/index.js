@@ -30,7 +30,6 @@ export default class UserPosts extends Component<Props, State> {
                 url: `https://api.meanwise.com/api/v1.2/user/${this.props.id}/posts/`,
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Token ca7155e3030544e29737bc5948db7a7137e548de",
                 },
             }).then( response => {
                 const posts = response.data.results.data;
