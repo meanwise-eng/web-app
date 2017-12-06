@@ -2,18 +2,25 @@
 import { h, Component } from "preact";
 import axios from "axios";
 
-type Props = {
-    id: ?number,
-    interestList: Array<number>
+type State = {
+    interest: ?Object,
+    selectedInterest: ?number,
 };
 
-export default class NavBar extends Component {
+type Props = {
+    id: ?number,
+    interestList: Array<number>,
+    handleFilter: Function,
+};
+
+export default class NavBar extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            interest: null
+            interest: null,
         };
-    }
+    };
+    state: State;
 
     componentDidMount() {
         const { interestList } = this.props;
@@ -33,7 +40,7 @@ export default class NavBar extends Component {
                 console.log(err);
             });
         }
-    }
+    };
 
     renderNavElements = () => {
         const { interestList } = this.props;
@@ -46,9 +53,11 @@ export default class NavBar extends Component {
                 const key = interestKeys.find(item => interest[item].id === id);
                 list[index] = interest[key];
             });
-            return Object.keys(list).map(id => <li>{list[id].name}</li>);
+            return Object.keys(list).map(
+                id => <li onClick={() => this.props.handleFilter(list[id].id)}>{list[id].name}</li>
+            );
         }
-    }
+    };
 
     render() {
         return (

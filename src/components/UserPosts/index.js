@@ -10,7 +10,8 @@ type Props = {
 
 type State = {
     posts: ?Object,
-    interests: Array<mixed>
+    interests: Array<mixed>,
+    selectedInterestId: ?number,
 };
 
 export default class UserPosts extends Component<Props, State> {
@@ -18,7 +19,8 @@ export default class UserPosts extends Component<Props, State> {
         super(props: Props);
         this.state = {
             posts: null,
-            interests: []
+            interests: [],
+            selectedInterestId: null,
         };
     }
     state: State;
@@ -43,19 +45,36 @@ export default class UserPosts extends Component<Props, State> {
         }
     }
 
+    handleSelectedInterest = (id) => {
+        this.setState({
+            selectedInterestId: id,
+        });
+    }
+
     renderPosts = () => {
         const { posts } = this.state;
         if (posts) {
             const arr = Object.keys(posts);
-            return arr.map(post => <Post post={posts[post]} key={posts[post].id} type={posts[post].post_type} />)
+            return arr.map(post => {
+                if (this.state.selectedInterestId) {
+                    if (posts[post].interest_id === this.state.selectedInterestId) {
+                        return <Post post={posts[post]} key={posts[post].id} type={posts[post].post_type} />;
+                    }
+                    else {
+                        return null;
+                    }
+                }
+                return <Post post={posts[post]} key={posts[post].id} type={posts[post].post_type} />
+            });
         }
         return null;
     }
 
+
     render() {
         return (
             <div>
-                <NavBar interestList={this.state.interests} />
+                <NavBar interestList={this.state.interests} handleFilter={this.handleSelectedInterest} />
                 <div className="posts-wrapper">
                     {this.renderPosts()}
                 </div>
