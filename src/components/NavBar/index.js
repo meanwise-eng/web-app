@@ -63,6 +63,7 @@ export default class NavBar extends Component<Props, State> {
         return (
             <nav>
                 <ul>
+                    <li onClick={() => this.props.handleFilter(null)}>All</li>
                     {this.renderNavElements()}
                 </ul>
             </nav>
