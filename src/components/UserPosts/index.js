@@ -74,7 +74,6 @@ export default class UserPosts extends Component<Props, State> {
     render() {
         return (
             <div>
-                <NavBar interestList={this.state.interests} handleFilter={this.handleSelectedInterest} />
                 <div className="posts-wrapper">
                     {this.renderPosts()}
                 </div>

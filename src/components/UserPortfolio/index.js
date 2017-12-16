@@ -1,8 +1,7 @@
 import { h, Component } from "preact";
 import axios from "axios";
 
-import Header from "../Header";
-import UserPosts from "../UserPosts";
+import NavBar from "../NavBar";
 
 type State = {
     user: ?Object
@@ -45,8 +44,7 @@ export default class UserPortfolio extends Component<State, Props> {
         if (user) {
             return(
                 <div>
-                    <Header data={this.state.user}/>
-                    <UserPosts id={this.state.user.user_id}/>
+                    <NavBar />
                 </div>
             );
         }
