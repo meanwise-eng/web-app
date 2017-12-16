@@ -2,6 +2,7 @@ import { h, Component } from "preact";
 import axios from "axios";
 
 import NavBar from "../NavBar";
+import DetailSection from "../DetailSection";
 
 type State = {
     user: ?Object
@@ -41,10 +42,14 @@ export default class UserPortfolio extends Component<State, Props> {
 
     render() {
         const { user } = this.state;
+        console.log(user);
         if (user) {
             return(
                 <div>
                     <NavBar />
+                    <div className="portfolio-container">
+                        <DetailSection data={user}/>
+                    </div>
                 </div>
             );
         }
