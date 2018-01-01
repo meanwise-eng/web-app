@@ -2,7 +2,6 @@ import { h, Component } from "preact";
 import axios from "axios";
 
 import PostGallery from "../PostGallery";
-import NavBar from "../NavBar";
 
 type Props = {
     id: ?number
@@ -47,16 +46,13 @@ export default class UserPosts extends Component<Props, State> {
         const { userTopics, interests } = this.state;
         let postGallery = {};
         let gallery = null;
-
         if (userTopics) {
             const arr = Object.keys(userTopics);
-            return interests.map((interestId, index) => {
-                arr.map(post => {
-                    gallery = <PostGallery post={userTopics[post]} key={index} type={userTopics[post]["topic"]} />;
-                    return gallery;
-                });
+            gallery = arr.map((post, index) => {
+                return <PostGallery post={userTopics[post]} key={index} type={userTopics[post]["topic"]} />;
             });
         }
+        return gallery;
     }
 
 
