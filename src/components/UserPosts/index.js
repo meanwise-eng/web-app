@@ -1,7 +1,7 @@
 import { h, Component } from "preact";
 import axios from "axios";
 
-import Post from "../Post";
+import PostGallery from "../PostGallery";
 import NavBar from "../NavBar";
 
 type Props = {
@@ -11,16 +11,14 @@ type Props = {
 type State = {
     posts: ?Object,
     interests: Array<mixed>,
-    selectedInterestId: ?number,
 };
 
 export default class UserPosts extends Component<Props, State> {
     constructor(props) {
         super(props: Props);
         this.state = {
-            posts: null,
+            userTopics: null,
             interests: [],
-            selectedInterestId: null,
         };
     }
     state: State;
@@ -29,15 +27,15 @@ export default class UserPosts extends Component<Props, State> {
         if (this.props.id) {
             axios({
                 method: "get",
-                url: `https://api.meanwise.com/api/v1.2/user/${this.props.id}/posts/`,
+                url: `http://ec2-34-228-26-196.compute-1.amazonaws.com:8002/api/v4/user/${this.props.id}/user-topics/`,
                 headers: {
                     "Content-Type": "application/json",
                 },
             }).then( response => {
-                const posts = response.data.results.data;
+                const userTopics = response.data.results.user_topics;
                 this.setState({
-                    posts: posts,
-                    interests: [...new Set(Object.keys(posts).map(i => posts[i].interest_id))]
+                    userTopics,
+                    interests: [...new Set(Object.keys(userTopics).map(i => userTopics[i].interest))]
                 });
             }).catch( err => {
                 console.log(err);
@@ -45,38 +43,27 @@ export default class UserPosts extends Component<Props, State> {
         }
     }
 
-    handleSelectedInterest = (id) => {
-        this.setState({
-            selectedInterestId: id,
-        });
-    }
+    renderPostGallery = () => {
+        const { userTopics, interests } = this.state;
+        let postGallery = {};
+        let gallery = null;
 
-    renderPosts = () => {
-        const { posts } = this.state;
-        if (posts) {
-            const arr = Object.keys(posts);
-            return arr.map(post => {
-                if (this.state.selectedInterestId) {
-                    if (posts[post].interest_id === this.state.selectedInterestId) {
-                        return <Post post={posts[post]} key={posts[post].id} type={posts[post].post_type} />;
-                    }
-                    else {
-                        return null;
-                    }
-                }
-                return <Post post={posts[post]} key={posts[post].id} type={posts[post].post_type} />
+        if (userTopics) {
+            const arr = Object.keys(userTopics);
+            return interests.map((interestId, index) => {
+                arr.map(post => {
+                    gallery = <PostGallery post={userTopics[post]} key={index} type={userTopics[post]["topic"]} />;
+                    return gallery;
+                });
             });
         }
-        return null;
     }
 
 
     render() {
         return (
-            <div>
-                <div className="posts-wrapper">
-                    {this.renderPosts()}
-                </div>
+            <div className="posts-wrapper">
+                {this.renderPostGallery()}
             </div>
         );
     }

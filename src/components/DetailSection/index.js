@@ -21,7 +21,7 @@ export default class DetailSection extends Component<Props> {
                 <span>{data.first_name} {data.last_name}</span>
                 <span className="profession">{data.profession_text}</span>
                 <hr />
-                <p>{data.profile_story_description}</p>
+                <p>{data.bio}</p>
             </div>
         );
     }

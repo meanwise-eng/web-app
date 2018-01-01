@@ -3,6 +3,7 @@ import axios from "axios";
 
 import NavBar from "../NavBar";
 import DetailSection from "../DetailSection";
+import UserPosts from "../UserPosts";
 
 type State = {
     user: ?Object
@@ -20,7 +21,7 @@ export default class UserPortfolio extends Component<State, Props> {
     componentWillMount() {
         axios({
             method: "get",
-            url: "https://api.meanwise.com/api/v1.2/user/118/userprofile/",
+            url: "http://ec2-34-228-26-196.compute-1.amazonaws.com:8002/api/v4/user/by-username/max9xs/userprofile/",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -42,13 +43,13 @@ export default class UserPortfolio extends Component<State, Props> {
 
     render() {
         const { user } = this.state;
-        console.log(user);
         if (user) {
             return(
                 <div>
                     <NavBar />
                     <div className="portfolio-container">
                         <DetailSection data={user}/>
+                        <UserPosts id={user.user_id} />
                     </div>
                 </div>
             );
