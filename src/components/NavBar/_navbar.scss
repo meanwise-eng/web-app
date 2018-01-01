@@ -5,6 +5,8 @@ nav {
     padding-left: 60px;
     border-bottom: 1px solid #DFE4E8;
     top: 0;
+    z-index: 10;
+    background: #fff;
 
     @media all and (max-width: 420px) {
         padding-left: 0px;
