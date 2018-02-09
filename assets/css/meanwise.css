@@ -1,0 +1,396 @@
+body {
+  color: #454F5B;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+strong {
+  font-weight: 400;
+}
+
+#logo {
+  height: 40px;
+}
+
+#comments-list {
+  height: 400px;
+  overflow: scroll;
+}
+
+.smart-credits {
+  text-align: right;
+  color: #478ADF;
+  font-weight: 400;
+  font-size: 4.2rem;
+  line-height: 75px;
+}
+
+.credits-inner {
+}
+
+.credit-score {
+  
+}
+
+.bio {
+  font-size: 1.4rem;
+}
+
+.skill-score {
+  font-weight: bold;
+  display: block;
+}
+
+.portfolio-item {
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+.collage-link {
+  color: #454F5B!important;
+}
+
+.collage-link:hover {
+  color: #637381!important;
+}
+
+.section:not(:last-child) {
+  border-bottom: 1px solid #DFE4E8;
+}
+
+.portfolio-heading {
+  font-size: 3.2rem;
+  letter-spacing: 0.01rem;
+  margin: 15px 0;
+  margin-bottom: 30px;
+}
+
+.hero {
+  padding-top: 140px;
+  color: white;
+  background: #478ADF;
+}
+
+.hero h2 {
+  font-weight: lighter;
+  margin-bottom: 5px;
+  letter-spacing: 0.01rem;
+}
+
+.hero h4 {
+  font-size: 1.8rem;
+  font-weight: lighter;
+  letter-spacing: 0.01rem;
+}
+
+.hero h5 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  letter-spacing: 0.01rem;
+}
+
+.profile-photo {
+  border-radius: 50%;
+}
+
+.profile-photo-mini {
+  border-radius: 50%;
+  height: 70px;
+}
+
+.app-btn {
+  font-size: 1.6rem;
+  padding: 0px 5px;
+  padding-right: 17px;
+  font-weight: 400;
+}
+
+.hero .btn {
+  background: white;
+  color: #478ADF;
+  padding-left: 15px;
+}
+
+#sample-portfolio {
+  width: 300px;
+}
+
+#main-nav {
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  background: white; 
+}
+
+#main-nav .container {
+  padding: 0 24px;
+}
+
+#main-nav a {
+  color: #637381;
+  font-weight: 400;
+}
+
+#main-nav a:hover {
+  color: #454F5B;
+}
+
+.hero-nav {
+  padding: 15px;
+  padding-bottom: 0;
+}
+
+.hero-nav .container {
+  padding: 0;
+}
+
+.hero-nav .column {
+  line-height: 36px;
+}
+
+.hero-nav .sub-nav {
+  text-align: right;
+}
+
+.hero-nav .button-outline {
+  margin: 0;
+  display: inline-block;
+  border: 1px solid #478ADF!important;
+  background: none!important;
+  color: #478ADF!important;
+}
+
+.hero-nav .button {
+  margin: 0;
+  display: inline-block;
+  background: #478ADF;
+  border: none;
+  color: white;
+}
+
+#search {
+  border: none;
+  background: #F4F6F8;
+}
+
+#profile-cover {
+  border-radius: 10px;
+  color: white;
+  padding: 30px
+}
+
+#profile-cover .profession, #profile-cover .location {
+  margin: 0;
+  letter-spacing: 0.05rem;
+  font-size: 14px;
+}
+
+#profile-cover .headline {
+  font-size: 16px;
+  letter-spacing: 0.02rem;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+#profile-cover .stats {
+  letter-spacing: 0.05rem;
+  font-size: 13px;
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+#profile-cover .bio {
+  margin-bottom: 30px;
+  font-size: 13px;
+}
+
+#profile-cover h2 {
+  font-weight: 600;
+  font-size: 3.2rem;
+  letter-spacing: 0.05rem;
+  margin-bottom: 25px;
+}
+
+#profile-cover .skill-block {
+  background: rgba(255, 255, 255, .15);
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 15px;
+  color: white;
+}
+
+#collections {
+  margin-left: 25px;
+}
+
+#collections h4 {
+  font-size: 1.6rem;
+  letter-spacing: 0.01rem;
+  font-weight: bold;
+}
+
+#collections .column {
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.collection-hero {
+  height: 180px;
+  margin-bottom: 10px!important;
+  background-size: cover!important;
+}
+
+.collection-first {
+  height: 90px;
+  margin-right: 10px!important;
+  background-size: cover!important;
+}
+
+.collection-second {
+  height: 90px;
+  background-size: cover!important;
+}
+
+.post-profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.post-username {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.post-profession {
+  color: #919EAB;
+  font-size: 1.2rem;
+  line-height: 10px;
+}
+
+.post-content {
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.post-heading {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.post-topic {
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.post-details-url {
+  display: block;
+  border-radius: 15px;
+  font-weight: 400;
+  color: #919EAB!important;
+  background: #F4F6F8;
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  padding: 7px 0;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.post-details-topic {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  letter-spacing: 0.05rem;
+}
+
+.comments-heading {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.post-details-caption {
+  margin-bottom: 15px;
+}
+
+.post-comment-block-inner {
+  padding: 0!important;
+}
+
+.post-detail img {
+  width: 100%;
+}
+
+.post-comment-profile-photo {
+  border-radius: 50%;
+}
+
+.post-comment-username {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.post-comment-profession {
+  color: #919EAB;
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin-left: 5px;
+}
+
+.post-comment-content {
+  font-size: 1.4rem;
+}
+
+.post-comment-time {
+  color: #C4CDD5;
+  font-size: 1rem;
+  padding-left: 5px;
+}
+
+.similar-heading {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+#explore {
+  padding-top: 60px;
+}
+
+.topic {
+  border-radius: 10px;
+  background-size: cover!important;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.topic .backdrop {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: 0;
+  left: 0;
+}
+
+.topic h3 {
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: white;
+}
+
+.explore-heading {
+  font-size: 32px;
+  margin: 30px 0;
+}

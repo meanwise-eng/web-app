@@ -1,0 +1,286 @@
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('Gotham-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: 'Gotham Book';
+}
+
+.chevron-top {
+	position: absolute;
+	left: 50%;
+	bottom: 15px;
+}
+
+.chevron-top img {
+	width: 20px;
+}
+
+#typed {
+	font-family: 'Gotham';
+	font-weight: 300;
+}
+
+#banner-content h2 {
+	margin-bottom: 1rem;
+	letter-spacing: 0.05rem;
+}
+
+#banner-content h4 {
+	font-size: 18px;
+	letter-spacing: 0.05rem;
+}
+
+#invite-request-form {
+	text-align: center;
+}
+
+#invite-request-form input {
+	max-width: 400px;
+	padding: 2.5rem 1.5rem!important;
+	border: none;
+	background: rgba(255,255,255,.09);
+	color: white;
+	font-weight: 100;
+	letter-spacing: 0.1rem;
+}
+
+#invite-request-form input::placeholder {
+	color: rgba(255,255,255, .3);
+	font-weight: 100;
+	letter-spacing: 0.1rem;
+}
+
+#invite-request-form button {
+	height: 5rem;
+	line-height: 5.1rem;
+	background: #47C2E9;
+	border-color: #47C2E9;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+#nav-buttons a {
+	color: white!important;
+	font-size: 14px;
+	padding: 5px 15px;
+	float: right;
+	margin-top: 3px;
+}
+
+#nav-buttons .slack {
+	margin-top: 0px;
+	background: white;
+	color: #478ADF!important;
+	border-radius: 25px;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-left: 15px;
+	height: 35px;
+	line-height: 27px;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+#one .container {
+	max-width: 120.0rem;
+	padding-bottom: 7.5rem;
+	padding-top: 2.5rem;
+}
+
+#home {
+	background: #f4f5f6;
+	height: 100vh;
+	position: relative;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+.thumbnail {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#what-is {
+	margin-top: 90px;
+	text-align: center;
+}
+
+#what-is h2 {
+	color: #478ADF;
+	font-weight: bold;
+}
+
+#what-is p {
+	font-family: 'Gotham';
+	font-weight: 300;
+}
+
+#what-is-blocks {
+	text-align: center;
+	margin-top: 25px;
+}
+
+#what-is-blocks h4 {
+	margin-top: 15px;
+	font-size: 18px;
+	color: #478ADF;
+}
+
+#cryptoId {
+	color: white;
+}
+
+#cryptoId p {
+	font-family: 'Gotham';
+	font-weight: 300;
+}
+
+.feature.container {
+	max-width: 100.0rem;
+	padding-bottom: 7.5rem;
+	padding-top: 10rem;
+}
+
+#smartcredits {
+	color: white;
+}
+
+#smartcredits p {
+	font-family: 'Gotham';
+	font-weight: 300;
+}
+
+.container {
+	max-width: 100.0rem;
+	padding-bottom: 7.5rem;
+	padding-top: 2rem;
+}
+
+#explore {
+  text-align: center;
+  color: white;
+}
+
+.explore-text {
+  margin: 5rem 10rem;
+  font-family: 'Gotham';
+	font-weight: 300;
+}
+
+@media (max-width: 640px) {
+  .page {
+  	position: relative;
+  }
+  .desc.column {
+    text-align: center;
+    padding-top: 5rem;
+  }
+  
+  #what-is-blocks .column {
+    margin-bottom: 5rem;
+  }
+  #what-is-blocks .column:last-child {
+    margin-bottom: 0;
+  }
+  
+  #banner-content {
+  	margin-top: 10rem;
+  	text-align: center;
+  }
+  
+  #banner-content h2 {
+    font-size: 24px;
+  }
+  
+  #invite-request-form {
+    padding-bottom: 5rem;
+  }
+  
+  #invite-request-form h4 {
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 3rem;
+    color: rgba(255, 255, 255, .5);
+  }
+  
+  .hide-mobile {
+    display: none;
+  }
+  
+  .explore-text {
+    margin: 5rem 2rem;
+  }
+}
+
+#footer {
+  padding: 2rem 0;
+  background: #6A7077;
+}
+
+@media (min-width: 640px) {
+  
+  #banner-content {
+  	margin-top: 150px;
+  	text-align: center;
+  }
+  
+  #what-is {
+      padding: 0 10rem;
+  }
+  
+  .desc.column {
+    padding-left: 3rem;
+    padding-top: 5rem;
+  }
+  
+  .page {
+  	min-height: 100vh;
+  	position: relative;
+  }
+  
+  .smartcreds {
+    margin-top: 5rem;
+  }
+  
+  #invite-request-form h4 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 3rem;
+    color: rgba(255, 255, 255, .5);
+  }
+
+  .explore-img {
+    margin: 0 auto -142px!important;
+  }
+}
+
+.alert {
+    font-size: 1.3rem;
+    font-weight: bold;
+}

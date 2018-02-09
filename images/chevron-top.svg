@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="10px" viewBox="0 0 19 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>Bitmap</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect x="711" y="713" width="19" height="10" id="rect-1"></rect>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-711.000000, -713.000000)">
+            <g id="Bitmap" transform="translate(720.500000, 718.000000) scale(1, -1) translate(-720.500000, -718.000000) ">
+                <image x="711" y="713" width="19" height="10" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGEAAAA0CAYAAACaRVbnAAAAAXNSR0IArs4c6QAAAkxJREFUeAHt3E1KxDAYBuDRAY/iEQRXHkJcegAF//A4/iAuvYgrwZXgSm/gSnSlvhn58KMmbdKmbX7ewDdJMzGV99GxFGeWi7+2ieE5ahe1gXpGscVNYA3bmXyPUNuoV9QbatV28PiB+lZ1hfE6ii1OAktsc4PSGb/j2GCs2iMe9ZMyvsY8IX4zGvJoAG5Rkqvu783GJmQ92RwTwqTUv7UBmKw/ZesXDJrh62NCSFJhfReAyfhJttzHQIduGxNC0vLrfQBMznt6uzMc2MLXc4TQibnHvgCHti0IYUslbG4QgJyKEJJEeB8FQE5LCEnCv48KIKclhCTR3Y8CIKclhCTh7kcFkNP6QNR6i2MSAEJIAv/7SQHk9PyNkCQWi1kA5PSEmBmAEIkA1Awx60uQBN/sTzGh7yvZxqVcNSUJICA1QCQNUANEFgAlQ2QFUCJElgAhEJdYnPI/D2QNUAJEEQA5QxQFkCNEkQA5QRQNkANEFQACcYKB7baGnpv6qqkqgBQhqgRICaJqgBQgCCAK6Of4G0EABSBDH4gLLI5xi4MAkrqlnwKCAJbgm1NjQhCgmXbL8RgQBGgJ3PVUTAgCuFL2mI8BQQCPoLuWHGOBvp1hG7uumgjQlW7A830gCBAQsO/SEAgC+KbaY50vhOuN2vqlzPomvR7fU5Vf4gOhw7aNCRDhR2cIBAEiAMgWfSAIIOlF7EMgCBAx+OZWPhAEaKY2wnEbBAFGCNy1pfn0rC+UXA2Z8YFrccrz5uPAcm5b+ObNp6QYgDvUAyq79gPoy0nK5XC/vwAAAABJRU5ErkJggg=="></image>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#rect-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Meanwise provides an end-to-end solution for people to prove their individual skills - built on Blockchain. Meanwise enables people with diverse skillsets to build a profile where they can validate their abilities with stackable credits.">
+        <meta property="og:image" content="images/og-image.png" />
+		<title>Meanwise: Stackable Credentials built on Blockchain</title>
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+		<link rel="stylesheet" href="lib/normalize.css/normalize.css">
+		<link rel="stylesheet" href="lib/milligram/dist/milligram.min.css">
+		<link rel="stylesheet" href="styles/main.css">
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
+    <script src="scripts/jquery.scroll-deck.js"></script>
+		<script src="scripts/typed.js"></script>
+		<script src="scripts/main.js"></script>
+	</head>
+	<body>
+		<main class="wrapper">
+			<div id="one" class="page" style="background: #478ADF; color: white;">
+				
+				<div class="container">
+					<header>
+						<div class="row">
+							<div class="column">
+								<img src="images/meanwise-logo.svg" />
+							</div>
+							<div id="nav-buttons" class="column hide-mobile">
+								<!--<a href="#" class="slack">Join us on Slack</a>
+								<a href="#">FAQ</a>-->
+								<a class="hide-mobile" href="https://medium.com/@meanwise">Read our blog</a>
+                                <a class="hide-mobile" href="explore" title="Explore our content">Explore</a>
+							</div>
+						</div>
+					</header>
+					<div id="banner-content">
+						<h2>Stackable Credentials <span class="hide-mobile">for</span> <span id="typed"></span><h2>
+						<h4>Built on Blockchain</h4>
+					</div>
+				</div>
+				<span class="chevron-top"><img src="images/chevron-top.png"></span>
+			</div>
+	    <div class="page" style="background: #fff;">
+				<div class="container">
+					<div class="row">
+				    <div id="what-is" class="column">
+							<h2>What is Meanwise?</h2>
+							<p>Meanwise provides an end-to-end solution for people to prove their individual skills - built on Blockchain. Meanwise enables people with diverse skillsets to build a profile where they can validate their abilities with stackable credits.</p>
+							<p>The three main components of our solution are:</p>
+						</div>
+				  </div>
+					<div class="row" id="what-is-blocks">
+				    <div class="column">
+							<img src="images/crypto.png" style="height: 150px;">
+							<h4>CryptoID</h4>
+						</div>
+				    <div class="column">
+							<img src="images/blocks.png" style="height: 150px;">
+							<h4>smart.credits</h4>
+						</div>
+				    <div class="column">
+							<img src="images/profile.png" style="height: 150px;">
+							<h4>Profile</h4>
+						</div>
+				  </div>
+				</div>
+			</div>
+	    <div class="page" style="background: #FCB248;">
+				<div id="cryptoId" class="feature container">
+				  <div class="row">
+				    <div class="column">
+							<img class="cryptoid" src="images/cryptoid.svg" />
+						</div>
+				    <div class="desc column">
+							<h3>CryptoID</h3>
+							<p>CryptoID is an open and secure authentication system that uses biometrics to verify your identity. Your biometric information is encrypted and stored in the Blockchain. We don’t store any of the data associated with the CryptoID in our servers.</p>
+						</div>
+				  </div>
+				</div>
+			</div>
+			<div class="page" style="background: #9296EF;">
+				<div id="smartcredits" class="feature container">
+				  <div class="row">
+				    <div class="column">
+							<img class="smartcreds" src="images/smartcredits.svg" />
+						</div>
+				    <div class="desc column">
+							<h3>smart.credits</h3>
+							<p>smart.credits is a dynamic system that validates your skills by using data from verified independent critics who publicly vouch for your work, along with data from educational institutions, employers and other credentials. </p>
+						</div>
+				  </div>
+				</div>
+			</div>
+			<div class="page" style="background: #A5ADB8;">
+				<div id="smartcredits" class="feature container">
+				  <div class="row">
+				    <div class="column">
+							<img src="images/profile-b.png">
+						</div>
+				    <div class="desc column">
+							<h3>Profile</h3>
+							<p>The Meanwise Profile is the digital alternative to the traditional Resume. The Profile combines information from smart.credits and your Portfolio to visualize your abilities in a beautiful design. </p>
+						</div>
+				  </div>
+				</div>
+			</div>
+			<div class="page explore-column hide-mobile" style="background: #EF5361;">
+				<div id="explore" class="container">
+					<div class="explore-text">
+						<div class="row">
+							<p>Discover content from other people like you on Meanwise through our Explore feature. Find people to collaborate with, hire, discuss ideas, or simply network with.</p>
+						</div>
+					</div>
+				  <div class="row">
+						<div class="column column-100">
+							<img class="explore-img" src="images/comms.png"/>
+						</div>
+				  </div>
+				</div>
+			</div>
+		</main>
+        <script type="application/javascript">
+            $(function() {
+                $('#early-access-frm').on('submit', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var email = $('#nameField').val();
+                    $.post(
+                        'https://api.meanwise.com/api/v1.2/subscribe/early-access/',
+                        { 'email': email },
+                        function(response) {
+                            $('#subscription-success').fadeIn();
+                        },
+                        'json'
+                    );
+                });
+            });
+        </script>
+	</body>
+</html>
