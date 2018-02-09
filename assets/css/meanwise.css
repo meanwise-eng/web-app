@@ -394,3 +394,51 @@ strong {
   font-size: 32px;
   margin: 30px 0;
 }
+
+#open-in-app {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0px;
+  background: rgba(0,0,0,0.8);
+}
+
+#open-in-app > div.container {
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#open-in-app > div.container > div {
+  float: right;
+}
+
+#open-in-app button {
+  margin-bottom: 0;
+}
+
+#open-in-app > div.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#open-in-app > div.close > span {
+  color: #bbb;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 375px) {
+    #open-in-app > div.container {
+        max-width: 100%;
+    }
+    #open-in-app > div.container > div {
+        float: none;
+    }
+    #open-in-app button {
+        margin: 0 auto;
+        display: block;
+    }
+}

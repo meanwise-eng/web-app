@@ -1,4 +1,5 @@
 var base_uri = 'https://api.meanwise.com/api/v2.0/';
+//var base_uri = 'http://localhost:8000/api/v4/';
 var itemCount = 30;
 
 var ProfileDescriptionView = Backbone.View.extend({
@@ -21,6 +22,9 @@ var ProfileDescriptionView = Backbone.View.extend({
             el: '#collections',
             model: this.model
         });
+
+        var openInApp = new OpenInAppView();
+        openInApp.render();
 
         var skills = new Macy({
             container: '#skills',
@@ -625,6 +629,9 @@ var PostDetailView = Backbone.View.extend({
         this.$('#post-display').append(postDisplay.el);
         postDisplay.render();
 
+        var openInApp = new OpenInAppView();
+        openInApp.render();
+
         this.addPosts(posts);
         this.masonry = new Macy({
             container: '#posts-container',
@@ -705,7 +712,36 @@ MainNavView = Backbone.View.extend({
     },
 });
 
-PortfolioRouter = Backbone.Router.extend({
+var OpenInAppView = Backbone.View.extend({
+    events: {
+        'click .close span': 'close',
+        'click button': 'openInApp',
+    },
+    render: function() {
+        if (!this.isIOS()) {
+            return;
+        }
+        var template_src = document.getElementById('open-in-app-template').innerHTML;
+        var template = Handlebars.compile(template_src);
+        this.$el.html(template());
+        $('body').append(this.el);
+    },
+    isIOS: function() {
+        var ua = navigator.userAgent;
+        if (/iPhone|iPad|iPod/i.test(ua)) {
+            return true;
+        }
+        return false;
+    },
+    close: function() {
+        this.$el.remove();
+    },
+    openInApp: function() {
+        document.location.href = 'meanwise:/'+document.location.pathname;
+    }
+});
+
+var PortfolioRouter = Backbone.Router.extend({
     routes: {
         "user/:username": "user_by_username",
         "user/:user_id/topic/:topic(?search=:keyword)": "portfolio_topic",
