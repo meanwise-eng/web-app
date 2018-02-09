@@ -89,22 +89,34 @@
     </script>
 
     <script id="portfolio-details" type="text/x-handlebars-template">
-        <h2>{{ profile.first_name }} {{ profile.last_name }}</h2>
-        <div>
-            <p class="profession">{{ profile.profession_text }}</p>
-            <p class="location">{{ profile.city }}</p>
-        </div>
-        <div class="row stats">
-            <div class="column"><strong>{{ profile.friend_count }}</strong> Connections</div>
-            <div class="column"><strong>{{ profile.total_posts }}</strong> Posts</div>
-        </div>
-        <h4 class="headline">{{ profile.profile_story_description }}</h4>
-        <div class="bio">{{ profile.bio }}</div>
-        <div id="skills">
-            {{#each credits }}
-            <div class="skill-block">{{ skill }} <span class="skill-score">{{ credits }}</span></div>
-            {{/each}}
-        </div>
+        <section>
+            <div class="container" style="padding-top: 95px;">
+                <div class="row">
+                    <div class="column column-33" id="profile-cover" style="background: #478ADF; ">
+                        <h2>{{ profile.first_name }} {{ profile.last_name }}</h2>
+                        <div>
+                            <p class="profession">{{ profile.profession_text }}</p>
+                            <p class="location">{{ profile.city }}</p>
+                        </div>
+                        <div class="row stats">
+                            <div class="column"><strong>{{ profile.friend_count }}</strong> Connections</div>
+                            <div class="column"><strong>{{ profile.total_posts }}</strong> Posts</div>
+                        </div>
+                        <h4 class="headline">{{ profile.profile_story_description }}</h4>
+                        <div class="bio">{{ profile.bio }}</div>
+                        <div id="skills">
+                            {{#each credits }}
+                            <div class="skill-block">{{ skill }} <span class="skill-score">{{ credits }}</span></div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="" id="collections">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </script>
 
     <script id="portfolio-profile-bar" type="text/x-handlebars-template">

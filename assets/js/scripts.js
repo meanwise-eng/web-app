@@ -1,4 +1,5 @@
-var base_uri = 'https://api.meanwise.com/api/v2.0/';
+//var base_uri = 'https://api.meanwise.com/api/v2.0/';
+var base_uri = 'http://localhost:8000/api/v4/';
 var itemCount = 30;
 
 var ProfileDescriptionView = Backbone.View.extend({
@@ -17,8 +18,13 @@ var ProfileDescriptionView = Backbone.View.extend({
         var template = Handlebars.compile(template_src);
         $(this.el).html(template({'profile': this.model, 'credits': this.credits}));
 
+        var profilePortfolioView = new ProfilePortfolioView({
+            el: '#collections',
+            model: this.model
+        });
+
         var skills = new Macy({
-            container: '#' + this.el.id + ' #skills',
+            container: '#skills',
             trueOrder: false,
             waitForImages: false,
             useOwnImageLoader: false,
@@ -252,7 +258,7 @@ var ProfilePortfolioView = Backbone.View.extend({
             profilePortfolioView.render();
         }
         var masonry = new Macy({
-            container: '#'+this.el.id,
+            container: '#collections',
             trueOrder: false,
             waitForImages: false,
             useOwnImageLoader: false,
@@ -714,12 +720,8 @@ PortfolioRouter = Backbone.Router.extend({
         var profileReq = $.ajax({
             url: base_uri + 'user/by-username/'+username+'/userprofile/'
         }).done(function(profileRes) {
-            var profilePortfolioView = new ProfilePortfolioView({
-                el: '#collections',
-                model: profileRes.results
-            });
             var profileDescriptionView = new ProfileDescriptionView({
-                el: '#profile-cover',
+                el: '#main',
                 model: profileRes.results
             });
 
