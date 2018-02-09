@@ -1,4 +1,4 @@
-FROM node:9.5
+FROM nginx
 
-RUN npm install -g http-server
-RUN npm install -g live-server
+COPY ./ /usr/share/nginx/html 
+COPY ./default.conf /etc/nginx/conf.d/default.conf

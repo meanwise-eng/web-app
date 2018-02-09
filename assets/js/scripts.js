@@ -1,41 +1,4 @@
-//var skills = new Macy({
-//    container: '#skills',
-//    trueOrder: false,
-//    waitForImages: false,
-//    useOwnImageLoader: false,
-//    debug: true,
-//    mobileFirst: true,
-//    columns: 1,
-//    margin: 15,
-//    breakAt: {
-//        1200: 2,
-//        940: 3,
-//        520: 3,
-//        400: 2
-//    }
-//});
-
-//var masonry = new Macy({
-//    container: '#collections',
-//    trueOrder: false,
-//    waitForImages: false,
-//    useOwnImageLoader: false,
-//    debug: true,
-//    mobileFirst: true,
-//    columns: 1,
-//    margin: {
-//        x: 45,
-//        y: 15
-//    },
-//    breakAt: {
-//        1200: 2,
-//        940: 2,
-//        520: 2,
-//        400: 1
-//    }
-//});
-
-var base_uri = 'http://localhost:8000/api/v4/';
+var base_uri = 'https://api.meanwise.com/api/v2.0/';
 var itemCount = 30;
 
 var ProfileDescriptionView = Backbone.View.extend({
@@ -649,7 +612,7 @@ var PostDetailView = Backbone.View.extend({
         var related_post_template = Handlebars.compile(related_post_template_src);
         this.$el.html(
             profile_template(profile) +
-            detail_template(post) +
+            detail_template({post: post, comments: comments}) +
             related_post_template({topic: 'Similar Posts', posts: posts})
         );
 
@@ -749,7 +712,7 @@ PortfolioRouter = Backbone.Router.extend({
 
     user_by_username: function(username) {
         var profileReq = $.ajax({
-            url: 'http://localhost:8000/api/v4/user/by-username/'+username+'/userprofile/'
+            url: base_uri + 'user/by-username/'+username+'/userprofile/'
         }).done(function(profileRes) {
             var profilePortfolioView = new ProfilePortfolioView({
                 el: '#collections',
