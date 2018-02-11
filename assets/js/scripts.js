@@ -1,5 +1,5 @@
-//var base_uri = 'https://api.meanwise.com/api/v2.0/';
-var base_uri = 'http://localhost:8000/api/v4/';
+var base_uri = 'https://api.meanwise.com/api/v2.0/';
+//var base_uri = 'http://192.168.100.8:8000/api/v4/';
 var itemCount = 30;
 
 var ProfileDescriptionView = Backbone.View.extend({

@@ -3,7 +3,7 @@
         "apps": [],
         "details": [
             {
-                "appID": "ABCD1234.com.apple.wwdc",
+                "appID": "com.meanwise.meanwise",
                 "paths": [ "/user/*", "/posts/*" ]
             }
         ]
