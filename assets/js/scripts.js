@@ -1,5 +1,5 @@
-var base_uri = 'https://api.meanwise.com/api/v2.0/';
-//var base_uri = 'http://localhost:8000/api/v4/';
+//var base_uri = 'https://api.meanwise.com/api/v2.0/';
+var base_uri = 'http://localhost:8000/api/v4/';
 var itemCount = 30;
 
 var ProfileDescriptionView = Backbone.View.extend({
@@ -680,6 +680,7 @@ var PostDetailView = Backbone.View.extend({
 MainNavView = Backbone.View.extend({
     events: {
         "submit form": "search",
+        "click button.navbar-toggler": "toggle_menu",
     },
 
     initialize: function() {
@@ -710,6 +711,10 @@ MainNavView = Backbone.View.extend({
             model: {requestPaginator: requestPaginator},
         });
     },
+
+    toggle_menu: function() {
+        this.$('.container').toggleClass('show');
+    }
 });
 
 var OpenInAppView = Backbone.View.extend({
@@ -725,6 +730,11 @@ var OpenInAppView = Backbone.View.extend({
         var template = Handlebars.compile(template_src);
         this.$el.html(template());
         $('body').append(this.el);
+
+        var url = document.location.pathname;
+        var appBannerTemplateSrc = document.getElementById('ios-app-banner-template').innerHTML;
+        var appBannerTemplate = Handlebars.compile(appBannerTemplateSrc);
+        $('head').append(appBannerTemplate({url: url}));
     },
     isIOS: function() {
         var ua = navigator.userAgent;

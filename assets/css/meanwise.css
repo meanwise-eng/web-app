@@ -14,6 +14,12 @@ strong {
   height: 40px;
 }
 
+.logo {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+}
+
 #comments-list {
   height: 400px;
   overflow: scroll;
@@ -138,8 +144,14 @@ strong {
 }
 
 .hero-nav {
-  padding: 15px;
-  padding-bottom: 0;
+  padding: 5px 15px;
+}
+
+@media (min-width: 74.5rem) {
+    .hero-nav {
+        padding: 15px;
+        padding-bottom: 0;
+    }
 }
 
 .hero-nav .container {
@@ -154,7 +166,7 @@ strong {
   text-align: right;
 }
 
-.hero-nav .button-outline {
+.hero-nav .container .button-outline {
   margin: 0;
   display: inline-block;
   border: 1px solid #478ADF!important;
@@ -162,12 +174,59 @@ strong {
   color: #478ADF!important;
 }
 
-.hero-nav .button {
+.hero-nav .container .button {
   margin: 0;
   display: inline-block;
   background: #478ADF;
   border: none;
   color: white;
+}
+
+.button.button-clear.navbar-toggler {
+    padding: 4px 12px;
+    border: solid 1px rgba(0,0,0,0.1);
+    margin: 0;
+    display: block;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,<?xml version='1.0' ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height='32px' id='Layer_1' style='enable-background:new 0 0 32 32;' version='1.1' viewBox='0 0 32 32' width='32px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><line  x1='27' x2='5' y1='6' y2='6' stroke-width='5' stroke='rgba(0,0,0,0.5)' stroke-linecap='round' stroke-miterlimit='10'/><line  x1='27' x2='5' y1='16' y2='16' stroke-width='5' stroke='rgba(0,0,0,0.5)' stroke-linecap='round' stroke-miterlimit='10'/><line  x1='27' x2='5' y1='26' y2='26' stroke-width='5' stroke='rgba(0,0,0,0.5)' stroke-linecap='round' stroke-miterlimit='10'/></svg>");
+  background-size: 30px 30px;
+  width: 30px;
+  height: 30px;
+  display: block;
+
+}
+
+.hero-nav .collapse {
+    display: none;
+}
+
+.hero-nav .collapse.show {
+    display: block;
+}
+
+.hero-nav .container > div > div:nth-child(1) {
+    display: none;
+}
+
+#main-nav .container {
+    padding: 10px 0;
+}
+
+@media (min-width: 74.5rem) {
+    .hero-nav .collapse {
+        display: block;
+    }
+    .hero-nav .hidden-lg-up {
+        display: none;
+    }
+    .hero-nav .container > div > div:nth-child(1) {
+        display: block;
+    }
+    #main-nav .container {
+        padding: 0 24px;
+    }
 }
 
 #search {
@@ -441,4 +500,9 @@ strong {
         margin: 0 auto;
         display: block;
     }
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
 }

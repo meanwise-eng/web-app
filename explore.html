@@ -40,7 +40,13 @@
 </head>
 <body>
     <section id="main-nav" class="hero-nav section">
-        <div class="container">
+        <div class="d-flex hidden-lg-up">
+            <img src="assets/img/logo.svg" class="logo"></a>
+            <button class="navbar-toggler button button-clear">
+                <span class="navbar-toggler-icon"> </span>
+            </button>
+        </div>
+        <div class="container collapse">
             <div class="row">
                 <div class="column column-10">
                     <a href="index.html"><img id="logo" src="assets/img/logo.svg"></a>
@@ -257,6 +263,10 @@
                 </div>
             </div>
         </section>
+    </script>
+
+    <script id="ios-app-banner-template" type="text/x-handlerbars-template">
+        <meta name="apple-itunes-app" content="app-id=1159671281, app-argument={{ url }}">
     </script>
 
     <script src="assets/js/macy.js"></script>
