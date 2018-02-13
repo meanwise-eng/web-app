@@ -20,6 +20,10 @@ strong {
   margin: 0;
 }
 
+#main {
+  margin-top: 68px;
+}
+
 #comments-list {
   height: 400px;
   overflow: scroll;
@@ -126,6 +130,7 @@ strong {
 #main-nav {
   z-index: 10;
   position: fixed;
+  top: 0;
   width: 100%;
   background: white; 
 }
@@ -427,7 +432,6 @@ strong {
 }
 
 #explore {
-  padding-top: 60px;
 }
 
 .topic {

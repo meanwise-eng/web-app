@@ -53,11 +53,13 @@
                 </div>
                 <div class="column column-10"><a href="index.html">Home</a></div>
                 <div class="column column-10"><a href="explore">Explore</a></div>
-                <div class="column">
+                <div class="column column-50">
                 <form>
                     <input id="search" type="text" placeholder="Search" id="nameField">
                 </form>
                 </div>
+                <div class="column column-20 sub-nav"><a href="download/ios"><button class="button"
+                >Download</button></a></div>
             </div>
         </div>
     </section>
@@ -103,8 +105,8 @@
     </script>
 
     <script id="portfolio-details" type="text/x-handlebars-template">
-        <section>
-            <div class="container" style="padding-top: 95px;">
+        <section class="section">
+            <div class="container">
                 <div class="row">
                     <div class="column column-33" id="profile-cover" style="background: #478ADF; ">
                         <h2>{{ profile.first_name }} {{ profile.last_name }}</h2>
@@ -134,7 +136,7 @@
     </script>
 
     <script id="portfolio-profile-bar" type="text/x-handlebars-template">
-        <section class=" section" style="padding-top: 90px; padding-bottom: 15px;">
+        <section class=" section">
             <div class="container">
                 <div class="row">
                     <div class="column column-10">
@@ -208,7 +210,7 @@
     </script>
 
     <script id="explore-posts-template" type="text/x-handlebars-template">
-        <section class="section" style="padding-top: 90px; padding-bottom: 15px;">
+        <section class="section">
             <div class="container">
                 <h1 class="portfolio-heading">{{ topic }}</h1>
                 <div id="posts-container">
@@ -267,6 +269,14 @@
 
     <script id="ios-app-banner-template" type="text/x-handlerbars-template">
         <meta name="apple-itunes-app" content="app-id=1159671281, app-argument={{ url }}">
+    </script>
+
+    <script id="download-redirect-template" type="text/x-handlebars-template">
+        <section class="section"><div class="container"><p>
+            If you are not redirect automatically, please visit the
+            AppStore to download <a href="https://itunes.apple.com/us/app/meanwise/id1159671281?mt=8">
+            Meanwise for iOS.</a>
+        </p></div></section>
     </script>
 
     <script src="assets/js/macy.js"></script>

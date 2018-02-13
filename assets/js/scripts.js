@@ -1,5 +1,5 @@
 var base_uri = 'https://api.meanwise.com/api/v2.0/';
-//var base_uri = 'http://192.168.100.8:8000/api/v4/';
+//var base_uri = 'http://localhost:8000/api/v4/';
 var itemCount = 30;
 
 var ProfileDescriptionView = Backbone.View.extend({
@@ -527,8 +527,6 @@ var PostImageDisplayView = Backbone.View.extend({
     attributes: function() {
         return {
             src: this.model.image_url,
-            width: this.model.resolution.width,
-            height: this.model.resolution.height,
             style: 'background-color: #fafafa;',
         };
     },
@@ -751,14 +749,27 @@ var OpenInAppView = Backbone.View.extend({
     }
 });
 
+var DownloadView = Backbone.View.extend({
+    render: function() {
+        //document.location.href = 'https://itunes.apple.com/us/app/meanwise/id1159671281?mt=8';
+
+        var template_src = document.getElementById('download-redirect-template').innerHTML;
+        var template = Handlebars.compile(template_src);
+        this.$el.html(template());
+    }
+});
+
 var PortfolioRouter = Backbone.Router.extend({
     routes: {
+        "download": "download_ios",
+        "download/ios": "download_ios",
         "user/:username": "user_by_username",
         "user/:user_id/topic/:topic(?search=:keyword)": "portfolio_topic",
         "explore": "explore",
         "explore/search?:keyword": "explore_search",
         "explore/:topic(?search=:keyword)": "explore_topic",
         "posts/:post_id": "post_details",
+        ":username": "user_by_username",
     },
 
     user_by_username: function(username) {
@@ -849,7 +860,14 @@ var PortfolioRouter = Backbone.Router.extend({
                 commentsReq: commentsReq,
             }
         });
-    }
+    },
+
+    download_ios: function() {
+        var downloadView = new DownloadView({
+            el: '#main',
+        });
+        downloadView.render();
+    },
 });
 
 $.when($.ready).then(function() {
