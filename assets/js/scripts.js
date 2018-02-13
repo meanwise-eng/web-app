@@ -751,7 +751,7 @@ var OpenInAppView = Backbone.View.extend({
 
 var DownloadView = Backbone.View.extend({
     render: function() {
-        //document.location.href = 'https://itunes.apple.com/us/app/meanwise/id1159671281?mt=8';
+        document.location.href = 'https://itunes.apple.com/us/app/meanwise/id1159671281?mt=8';
 
         var template_src = document.getElementById('download-redirect-template').innerHTML;
         var template = Handlebars.compile(template_src);
